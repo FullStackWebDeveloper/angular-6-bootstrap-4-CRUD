@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h4 class="modal-title">Hi there!</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="inputField">{{type}} Products</label>
+    <input type="text" [formControl]="inputField" class="form-control" id="inputField" placeholder="Enter Your Products">
+    <small class="form-text text-muted">
+      <span *ngIf="!validateValue" class="invalid-value">Wrong Value! </span>
+      EX: (A,3), (B,1)
+    </small>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-success" (click)="submit()">OK</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
+</div>

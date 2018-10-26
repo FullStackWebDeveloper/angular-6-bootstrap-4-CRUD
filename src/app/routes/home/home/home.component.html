@@ -1,0 +1,35 @@
+<div class="home-container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12">
+        <div class="text-center">
+          <ul class="list-group">
+            <li *ngFor="let product of products; let o = odd; let e = even;" class="list-group-item"
+                [ngClass]="{
+                  'list-group-item-secondary': o,
+                  'list-group-item-success': e
+                }">
+                <strong>Apple Name:</strong> {{product.product_name}} <br/>
+                <strong>Weight:</strong> {{product.weight}}  
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-4 col-lg-4 d-flex justify-content-center">
+      <button type="button" class="btn btn-success" (click)="open('Add')">Add</button>
+    </div>
+    <div class="col-xl-4 col-lg-4 d-flex justify-content-center">
+      <button type="button" class="btn btn-success" (click)="open('Remove')">Remove</button>
+    </div>
+    <div class="col-xl-4 col-lg-4 d-flex justify-content-center">
+      <button type="button" class="btn btn-success" (click)="open('Modify')">Modify</button>
+    </div>
+  </div>
+
+  <!-- START cards box-->
+  
+  <!-- END cards box-->
+</div>
