@@ -19,7 +19,12 @@ export class InputModalComponent implements OnInit {
 
     ngOnInit() {
         this.inputField.valueChanges.subscribe((value)=> {
+            this.validateValue = true;
             this.products = [];
+            if (!value.match(/^\s*\(\s*[A-Za-z]+\s*\,\s*[0-9]+\s*\)(\s*\,\s*\(\s*[A-Za-z]+\s*\,\s*[0-9]+\s*\)\s*)*$/g)) {
+                this.validateValue = false;
+                return;
+            }
             value = value.replace(/\s/g, '');
             let tempArray = value.split(/[\s()]+/);
             tempArray = tempArray.filter(item => item);
